@@ -1,0 +1,109 @@
+/* Modal backdrop */
+
+.jjw-modal {
+  display: none;
+  /* Hides to start */
+  position: fixed;
+  /* Keeps in place */
+  z-index: 1;
+  /* Forces to front of everything */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Modal Content/Box */
+.jjw-modal-content {
+  position: relative;
+  top: 10%;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  border-radius: 5px;
+  width: 60%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+.jjw-modal-header {
+  padding: 2px 16px;
+  color: white;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.jjw-modal-header.alert {
+  color: #fff;
+  background-color: #63B9B9;
+  border-bottom: 1px solid #000;
+}
+
+.jjw-modal-header.success {
+  color: #fff;
+  background-color: #398439;
+  border-bottom: 1px solid #255625;
+}
+
+.jjw-modal-header.danger {
+  color: #fff;
+  background-color: #ac2925;
+  border-bottom: 1px solid #761c19;
+}
+
+.jjw-modal-header.warning {
+  color: #fff;
+  background-color: #d58512;
+  border-bottom: 1px solid #985f0d;
+}
+
+.jjw-modal-body {
+  padding: 2px 16px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.close {
+  color: #FFF;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  opacity: 1;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+@-webkit-keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0
+  }
+  to {
+    top: 0;
+    opacity: 1
+  }
+}
+
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0
+  }
+  to {
+    top: 0;
+    opacity: 1
+  }
+}

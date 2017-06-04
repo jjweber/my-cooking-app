@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- If using this local comment out this meta. This is to handle Mixed content error on github page. -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
+    <title>My Cooking App</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="src/css/bootstrap.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <link href="src/css/myPlugin.css" rel="stylesheet" />
+    <link href="src/css/main.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="container">
+      <h1>Cooking App</h1>
+    </header>
+
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a href="">Appetizers <span class="sr-only"></span></a></li>
+            <li><a href="">Main Course</a></li>
+            <li><a href="">Salads</a></li>
+            <li><a href="">Soups</a></li>
+            <li><a href="">Desserts</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+        <div id="addIconContainer" class="container" onclick="openAddModal()">
+          <span id="addRecipeSpan" class="glyphicon glyphicon-plus add" aria-hidden="true"></span>
+          <p id="addRecipeText">Add Recipe</p>
+        </div>
+      </div><!-- /.container-fluid -->
+    </nav>
+
+    <section id="mainContent">
+      <div class="wrapper">
+        <div class="container-fluid">
+
+          <ol class="breadcrumb">
+            <li class="active"><a href="/">Home</a></li>
+            <!--<li><a href="#">Library</a></li>
+            <li class="active">Data</li>-->
+          </ol>
+
+          <div id="recipeContainer"></div>
+        </div>
+
+      </div>
+    </section>
+
+      <!--<section>
+      <form id="addRecipeForm2">
+
+      <label for="addRecipePhoto2">Recipe Image:</label>
+      <input type="text" class="form-control" id="addRecipePhoto2" placeholder="e.g. Homemade Cobbler..." required pattern="[a-zA-Z]+" minlength="3">
+
+      <label for="addRecipeName2">Recipe Name:</label>
+      <input type="text" class="form-control" id="addRecipeName2" placeholder="e.g. Homemade Cobbler..." required pattern="[a-zA-Z]+" minlength="3">
+
+      <label for="addRecipeDescription2">Recipe Description:</label>
+      <textarea class="form-control" id="addRecipeDescription2" rows="3" name="newRecipeDescription" placeholder="e.g. Best Cobbler I have ever tasted..." required minlength="3"></textarea>
+
+      <label for="addStarRatingForModal2">Recipe Rating:</label>
+      <div id="addStarRatingForModal2" class="stars">
+        <input type="radio" name="star" class="star-1" id="star-1" />
+        <label class="star-1" for="star-1">1</label>
+        <input type="radio" name="star" class="star-2" id="star-2" />
+        <label class="star-2" for="star-2">2</label>
+        <input type="radio" name="star" class="star-3" id="star-3" />
+        <label class="star-3" for="star-3">3</label>
+        <input type="radio" name="star" class="star-4" id="star-4" />
+        <label class="star-4" for="star-4">4</label>
+        <input type="radio" name="star" class="star-5" id="star-5" />
+        <label class="star-5" for="star-5">5</label>
+        <span></span>
+      </div>
+      </form>
+
+      <div id="addModalBtns2">
+        <input id="addReciepeSaveBtn2" class="btn btn-success fuckoff" onclick="saySomething()" type="submit" value="Save">
+        <input id="addModalCancelBtn2" class="btn btn-danger" type="button" value="Cancel">
+      </div>
+    </section>
+  -->
+
+
+
+
+
+    <form id="myForm" action="#">
+
+      <label for="addRecipeP">Recipe Image:</label>
+      <input type="text" class="form-control" id="addRecipeP" name="newRecipePhoto" placeholder="e.g. Homemade Cobbler..." />
+
+      <label for="addRecipeN">Recipe Name:</label>
+      <input type="text" class="form-control" id="addRecipeN" name="newRecipeTitle" placeholder="e.g. Homemade Cobbler..." />
+
+      <label for="addRecipeD">Recipe Description:</label>
+      <textarea class="form-control" id="addRecipeD" rows="3" name="newRecipeDescription" placeholder="e.g. Best Cobbler I have ever tasted..."></textarea>
+
+      <button class="btn btn-success">Convert form to object!</button>
+    </form>
+
+
+    <!--<button class="btn btn-success" onclick="saySomething()">Test form to object!</button>-->
+
+
+
+
+
+
+
+
+
+
+    <h1>Test Area For My Jquery Notification Plugin</h1>
+
+    <div class="modalBtnGroup">
+      <button id="jjwModalTrigger1" class="btn btn-primary modalBtn alertModal"><span class="glyphicon glyphicon-bell" aria-hidden="true"></span> Alert Modal</button>
+      <button id="jjwModalTrigger2" class="btn btn-success modalBtn successModal"><span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span> Success Modal</button>
+      <button id="jjwModalTrigger3" class="btn btn-warning modalBtn warningModal"><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> Warning Modal</button>
+      <button id="jjwModalTrigger4" class="btn btn-danger modalBtn dangerModal"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span> Danger Modal</button>
+    </div>
+
+    <footer>
+      <p>Built by Justin Weber for Programming for Web Applications Class.</p>
+
+      <div class="social-media-bar">
+        <a href="#" id="smb-facebook">
+            <span>Share this on Facebook</span>
+            <figure>
+                <i class="fa fa-facebook"></i>
+                <figcaption>2349</figcaption>
+            </figure>
+        </a>
+        <a href="#" id="smb-twitter">
+            <span>Tweet this out</span>
+            <figure>
+                <i class="fa fa-twitter"></i>
+                <figcaption>217</figcaption>
+            </figure>
+        </a>
+        <a href="#" id="smb-googleplus">
+            <span>Share this on Google+</span>
+            <figure>
+                <i class="fa fa-google-plus"></i>
+                <figcaption>5</figcaption>
+            </figure>
+        </a>
+        <a href="#" id="smb-pinterest">
+            <span>Pin This</span>
+            <figure>
+                <i class="fa fa-pinterest"></i>
+                <figcaption>30</figcaption>
+            </figure>
+        </a>
+        <a href="#" id="smb-email">
+            <span>Send this in an Email</span>
+            <figure>
+                <i class="fa fa-envelope"></i>
+                <figcaption></figcaption>
+            </figure>
+        </a>
+      </div>
+    </footer>
+
+    <!--CDN link for  TweenMax-->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+
+    <script type="text/javascript" src="src/js/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="src/js/bootstrap.js"></script>
+
+    <script type="text/javascript" src="src/js/myPlugin.js"></script>
+    <script type="text/javascript" src="src/js/LocalStorageStore.js"></script>
+    <script type="text/javascript" src="src/js/main.js"></script>
+  </body>
+</html>

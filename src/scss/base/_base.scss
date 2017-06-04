@@ -1,0 +1,435 @@
+html body {
+  text-align: center;
+}
+
+body {
+  color: $gray;
+  font-family: 'Roboto','Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  padding: 1rem;
+  text-rendering: optimizeLegibility;
+}
+
+header {
+  background: url("../images/header-image.jpg") no-repeat center;
+  background-size: cover;
+  height: 250px;
+  position: relative;
+
+  h1 {
+    font-size: 45px;
+    color: #FFF;
+    padding-top: 100px;
+  }
+}
+
+nav .container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.navbar-header,
+#addIconContainer {
+  display: inline-flex;
+}
+
+.navbar-nav > li {
+  margin-bottom: 1rem;
+}
+
+@media only screen and (min-width : 767px) {
+  .navbar-nav > li {
+    margin-bottom: 0;
+  }
+}
+
+.navbar-nav > li > a {
+  padding: 10px 10px;
+}
+
+@media only screen and (min-width : 835px) {
+  .navbar-nav > li > a {
+    padding: 10px 15px;
+  }
+}
+
+.collapse,
+.navbar-header {
+  float: left;
+  padding-left: 15px;
+  padding-right: 0;
+}
+
+#addIconContainer {
+  color: #000;
+  text-align: center;
+  float: right;
+  padding-left: 0;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+#addRecipeSpan {
+  padding-top: .8rem;
+}
+#addRecipeText {
+  padding-top: .6rem;
+  margin-left: 5px;
+}
+
+div .container-fluid {
+  background: #63B9B9;
+  min-height: calc(100vh - 70px);
+
+  .breadcrumb li a:hover {
+    color: #FFF;
+    text-decoration: none;
+  }
+
+  h2 {
+    margin-top: 4.5rem;
+    color: green;
+  }
+}
+
+ol.breadcrumb {
+  margin-left: 20px;
+}
+
+#recipeContainer {
+  clear: both;
+
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li.card-wrapper {
+      display: flex;
+      padding: 1rem;
+      @media(min-width: 40rem) {
+        width: 50%;
+      }
+      @media(min-width: 56rem) {
+        width: 25%;
+      }
+
+      div.card {
+        width: 100%;
+        background-color: white;
+        border-radius: 0.25rem;
+        box-shadow: 0 20px 40px -14px rgba(0,0,0,0.25);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        &:hover {
+          .card-image {
+            filter: contrast(100%);
+          }
+        }
+
+        div.card-image {
+          background-position: center center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          border-top-left-radius: 0.25rem;
+          border-top-right-radius: 0.25rem;
+          filter: contrast(70%);
+          //filter: saturate(180%);
+          overflow: hidden;
+          position: relative;
+          transition: filter 0.5s cubic-bezier(.43,.41,.22,.91);;
+          &::before {
+            content: "";
+            display: block;
+            padding-top: 56.25%; // 16:9 aspect ratio
+          }
+          @media(min-width: 40rem) {
+            &::before {
+              padding-top: 66.6%; // 3:2 aspect ratio
+            }
+          }
+        }
+
+        .card-content {
+          display: flex;
+          text-align: left;
+          flex: 1 1 auto;
+          flex-direction: column;
+          padding: 1rem;
+
+          .card-title {
+            color: #63B9B9;
+            font-size: 1.25rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+          }
+
+          .card-text {
+            flex: 1 1 auto;
+            font-size: 0.875rem;
+            line-height: 1.5;
+            margin-top: 1rem;
+            margin-bottom: 1.25rem;
+          }
+
+          .card-footer {
+            .rating {
+              float: left;
+            }
+            .buttons {
+              float: right;
+              .glyphicon {
+                display: inline-block;
+                cursor: pointer;
+
+                :hover {
+                  color: $gray-dark;
+                }
+              }
+
+              .delete {
+                margin-left: 5px;
+              }
+            }
+
+          }
+        }
+      }
+    }
+
+  }
+}
+
+.add {
+  color: green;
+}
+
+.edit {
+  color: #000;
+}
+
+.delete {
+  color: red;
+}
+
+
+form .stars,
+form .stars {
+  background: url("../../src/images/stars.png") repeat-x 0 0;
+  width: 150px;
+  float: left;
+  margin-bottom: 2rem;
+}
+
+form .stars input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+form .stars input[type="radio"].star-5:checked ~ span {
+  width: 100%;
+}
+form .stars input[type="radio"].star-4:checked ~ span {
+  width: 80%;
+}
+form .stars input[type="radio"].star-3:checked ~ span {
+  width: 60%;
+}
+form .stars input[type="radio"].star-2:checked ~ span {
+  width: 40%;
+}
+form .stars input[type="radio"].star-1:checked ~ span {
+  width: 20%;
+}
+form .stars label {
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin: 0!important;
+  padding: 0!important;
+  text-indent: -999em;
+  float: left;
+  position: relative;
+  z-index: 10;
+  background: transparent!important;
+  cursor: pointer;
+}
+form .stars label:hover ~ span {
+  background-position: 0 -30px;
+}
+form .stars label.star-5:hover ~ span {
+  width: 100% !important;
+}
+form .stars label.star-4:hover ~ span {
+  width: 80% !important;
+}
+form .stars label.star-3:hover ~ span {
+  width: 60% !important;
+}
+form .stars label.star-2:hover ~ span {
+  width: 40% !important;
+}
+form .stars label.star-1:hover ~ span {
+  width: 20% !important;
+}
+form .stars span {
+  display: block;
+  width: 0;
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 30px;
+  background: url("../../src/images/stars.png") repeat-x 0 -60px;
+  -webkit-transition: -webkit-width 0.5s;
+  -moz-transition: -moz-width 0.5s;
+  -ms-transition: -ms-width 0.5s;
+  -o-transition: -o-width 0.5s;
+  transition: width 0.5s;
+}
+
+
+#addRecipeForm label,
+#editRecipeForm label,
+#addRecipeForm input,
+#editRecipeForm input {
+  display: block;
+}
+
+#addRecipeForm label,
+#editRecipeForm label {
+  float: left;
+}
+
+#addRecipeForm input,
+#editRecipeForm input,
+#addRecipeForm textarea,
+#editRecipeForm textarea {
+  margin-bottom: 1rem;
+}
+
+#addModalBtns,
+#editModalBtns {
+  clear: both;
+  display: inline-block;
+  margin: 2rem 0 1rem 0;
+}
+
+label {
+  color: #63B9B9;
+}
+
+
+h1:last-of-type {
+  text-align: center;
+  color: #000;
+  margin-top: 5rem;
+}
+
+.modalBtnGroup {
+  background: #63B9B9;
+  //width: 20rem;
+  border: 2px solid #000;
+  padding: 1rem;
+  margin: 1rem auto;
+}
+
+.modalBtn {
+  display: inline-block;
+  border: 1px solid #000;
+}
+
+
+$block-size: 60px;
+$figloc: (-1 * ($block-size / 2 - 10));
+$span-size: 200px;
+$default-color: #9f9f9f;
+$facebook-color: #3b5998;
+$twitter-color: #00aced;
+$googleplus-color: #dd4b39;
+$pinterest-color: #cb2027;
+
+
+.social-media-bar {
+	position: fixed;
+	color: white;
+	left: 0;
+	top: 5%;
+	line-height: $block-size;
+	a {
+		position: relative;
+		display: block;
+		color: inherit;
+		width: $block-size;
+		text-decoration: none;
+		text-align: center;
+		perspective: 100px;
+		perspective-origin: 0px;
+		transition: all 300ms ease-in-out;
+		&:hover {
+			width: ($block-size + $span-size);
+			span {
+				font-size: 9px;
+				display: inline-block;
+				width: $span-size;
+				transform: rotateY(0deg);
+			}
+		}
+	}
+	figure {
+		display: inline-block;
+		position: relative;
+		margin: 0;
+		margin-right: -4px;
+		width: $block-size;
+		height: $block-size;
+		background-color: $default-color;
+		z-index: 1;
+		figcaption {
+			position: absolute;
+			bottom: $figloc;
+			width: 100%;
+			font-size: 8px;
+			letter-spacing: 1px;
+		}
+		&:hover {
+			& + span {
+				transform: rotateX(0deg);
+			}
+		}
+	}
+	span {
+		display: inline-block;
+		position: relative;
+		vertical-align: top;
+		margin-right: -4px;
+		height: $block-size;
+		background-color: $default-color;
+		font-size: 0px;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		width: 0px;
+		z-index: 2;
+		pointer-events: none;
+		transition: all 300ms ease-in-out;
+		transform-origin: right;
+	}
+}
+
+#smb-facebook, #smb-facebook figure, #smb-facebook span  { background: $facebook-color; }
+#smb-twitter, #smb-twitter figure, #smb-twitter span { background: $twitter-color; }
+#smb-googleplus, #smb-googleplus figure, #smb-googleplus span { background: $googleplus-color; }
+#smb-pinterest, #smb-pinterest figure, #smb-pinterest span { background: $pinterest-color; }
+
+footer {
+  text-align: center;
+  padding: 1.5rem 0;
+  margin: 0 -16px -16px -16px;
+  border-top: 3px solid $primary-color;
+  font-size: 15px;
+  height: 70px;
+}

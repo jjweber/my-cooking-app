@@ -1,0 +1,5 @@
+// Mixins
+@mixin text-truncate {
+  overflow: hidden;
+  white-space: nowrap;
+}
