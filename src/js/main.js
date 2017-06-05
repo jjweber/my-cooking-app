@@ -258,7 +258,7 @@ function formToObject(selector) {
 // Function To Get Recipes From Json File Using Ajax
 function getRecipes() {
   $.ajax({
-    url: '/src/js/recipes.json',
+    url: './src/js/recipes.json',
     dataType: 'json',
     success: function (data) {
       // user our custom LocalStorageStore class to save data to localstore

@@ -36,11 +36,11 @@ nav .container-fluid {
     margin-bottom: 0; } }
 
 .navbar-nav > li > a {
-  padding: 10px 10px; }
+  padding: 10px 7px; }
 
 @media only screen and (min-width: 835px) {
   .navbar-nav > li > a {
-    padding: 10px 15px; } }
+    padding: 10px 13px; } }
 
 .collapse,
 .navbar-header {
@@ -97,6 +97,7 @@ ol.breadcrumb {
         #recipeContainer .cards li.card-wrapper {
           width: 25%; } }
       #recipeContainer .cards li.card-wrapper div.card {
+        width: 100%;
         background-color: white;
         border-radius: 0.25rem;
         box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
@@ -260,10 +261,13 @@ form .stars span {
 label {
   color: #63B9B9; }
 
-h1:last-of-type {
-  text-align: center;
-  color: #000;
-  margin-top: 5rem; }
+#jqueryPluginTestArea {
+  background: #E3A52E; }
+  #jqueryPluginTestArea h1 {
+    text-align: center;
+    color: #000;
+    padding-top: 1rem;
+    margin-top: 5rem; }
 
 .modalBtnGroup {
   background: #63B9B9;
@@ -275,79 +279,6 @@ h1:last-of-type {
   display: inline-block;
   border: 1px solid #000; }
 
-body {
-  min-height: 100vh;
-  background-color: #333;
-  background: radial-gradient(circle, #666, #333); }
-
-.social-media-bar {
-  position: fixed;
-  color: white;
-  left: 0;
-  top: 5%;
-  line-height: 60px; }
-  .social-media-bar a {
-    position: relative;
-    display: block;
-    color: inherit;
-    width: 60px;
-    text-decoration: none;
-    text-align: center;
-    perspective: 100px;
-    perspective-origin: 0px;
-    transition: all 300ms ease-in-out; }
-    .social-media-bar a:hover {
-      width: 260px; }
-      .social-media-bar a:hover span {
-        font-size: 9px;
-        display: inline-block;
-        width: 200px;
-        transform: rotateY(0deg); }
-  .social-media-bar figure {
-    display: inline-block;
-    position: relative;
-    margin: 0;
-    margin-right: -4px;
-    width: 60px;
-    height: 60px;
-    background-color: #9f9f9f;
-    z-index: 1; }
-    .social-media-bar figure figcaption {
-      position: absolute;
-      bottom: -20px;
-      width: 100%;
-      font-size: 8px;
-      letter-spacing: 1px; }
-    .social-media-bar figure:hover + span {
-      transform: rotateX(0deg); }
-  .social-media-bar span {
-    display: inline-block;
-    position: relative;
-    vertical-align: top;
-    margin-right: -4px;
-    height: 60px;
-    background-color: #9f9f9f;
-    font-size: 0px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    width: 0px;
-    z-index: 2;
-    pointer-events: none;
-    transition: all 300ms ease-in-out;
-    transform-origin: right; }
-
-#smb-facebook, #smb-facebook figure, #smb-facebook span {
-  background: #3b5998; }
-
-#smb-twitter, #smb-twitter figure, #smb-twitter span {
-  background: #00aced; }
-
-#smb-googleplus, #smb-googleplus figure, #smb-googleplus span {
-  background: #dd4b39; }
-
-#smb-pinterest, #smb-pinterest figure, #smb-pinterest span {
-  background: #cb2027; }
-
 footer {
   text-align: center;
   padding: 1.5rem 0;
@@ -355,3 +286,36 @@ footer {
   border-top: 3px solid #222;
   font-size: 15px;
   height: 70px; }
+  footer p {
+    color: #000; }
+
+/* Social Media */
+#social-media {
+  margin: .5em 0 0 0; }
+
+.social-media-bar {
+  padding: 0;
+  margin: -2em 0 0 0; }
+
+.social-media-bar .fa {
+  font-size: 1.6em;
+  color: #000;
+  margin: 1.6em; }
+
+.social-media-bar li {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  list-style-type: none; }
+
+.fa-facebook:hover {
+  color: #3b5998; }
+
+.fa-twitter:hover {
+  color: #55acee; }
+
+.fa-linkedin:hover {
+  color: #007bb5; }
+
+.fa-github-alt:hover {
+  color: #8D9496; }
