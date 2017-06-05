@@ -160,7 +160,7 @@ function openEditModal(index) {
       <label class="star-5" for="star-5">5</label>
       <span></span>
     </div>
-    <input type="hidden" class="starField" name="StarRating" value="0">
+    <input type="hidden" class="starField" name="StarRating" value="${currentRecipe.StarRating}">
   </form>
 
   <div id="editModalBtns">
