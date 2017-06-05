@@ -20,6 +20,8 @@ gulp.task("default", function () {
         .pipe(gulp.dest("dist"));
     gulp.src('./src/css/*')
         .pipe(gulp.dest('./dist/css'));
+    gulp.src('./src/js/*.json')
+        .pipe(gulp.dest('dist/js'));
     gulp.src('*.html')
         .pipe(htmlreplace({'devincludes': ''}))
         .pipe(gulp.dest('dist'));
